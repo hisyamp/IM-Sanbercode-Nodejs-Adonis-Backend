@@ -1,0 +1,6 @@
+Data Peserta Sanbercode Bootcamp Nodejs Adonis Backend
+1. Nama: Mochamad Hisyam Priaji
+2. Email: hisyampriaji.hp@gmail.com
+3. Sistem Operasi yang digunakan: Mac OS
+4. Akun Gitlab: hisyamp
+5. Akun Telegram: hisyamp
