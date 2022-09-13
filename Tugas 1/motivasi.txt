@@ -1,0 +1,1 @@
+ingin mempelajari backend Nodejs, Type Script dengan database My SQL
