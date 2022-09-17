@@ -2,16 +2,20 @@
 
 function arrayToObject(arr) {
   console.log(arr);
+  if (arr.length == 0) {
+    console.log("-");
+  }
+  var obj = {};
+  var counter = 0;
   arr.forEach((element) => {
-    var nama = element[0] + " " + element[1];
-    nama = {
-      firstname: element[0],
-      lastname: element[1],
-      gender: element[2],
-      age: element[3],
-    };
+    var fname = element[0] + " " + element[1];
+    obj.firstname = element[0];
+    obj.lastname = element[1];
+    obj.gender = element[2];
+    obj.age = element[3];
+    counter++;
+    console.log(counter + ". " + fname + ":" + obj);
   });
-  console.log("-----");
 }
 
 // Driver Code
@@ -19,7 +23,7 @@ var people = [
   ["Bruce", "Banner", "male", 1975],
   ["Natasha", "Romanoff", "female"],
 ];
-arrayToObject(people);
+// arrayToObject(people);
 /*
     1. Bruce Banner: { 
         firstName: "Bruce",
@@ -39,7 +43,7 @@ var people2 = [
   ["Tony", "Stark", "male", 1980],
   ["Pepper", "Pots", "female", 2023],
 ];
-arrayToObject(people2);
+// arrayToObject(people2);
 /*
     1. Tony Stark: { 
         firstName: "Tony",
@@ -61,9 +65,17 @@ arrayToObject(people2);
 //tugas2;
 function naikAngkot(arrPenumpang) {
   rute = ["A", "B", "C", "D", "E", "F"];
-  //your code here
+  var obj = {};
+  arrPenumpang.forEach((e) => {
+    // console.log(rute.indexOf(e[1]));
+    var jrk = rute.indexOf(e[2]) - rute.indexOf(e[1]);
+    byr = jrk * 2000;
+    obj.penumpang = e[0];
+    obj.naikDari = e[1];
+    obj.tujuan = e[2];
+    obj.bayar = byr;
+  });
 }
-
 //TEST CASE
 // console.log(
 //   naikAngkot([
@@ -78,34 +90,63 @@ function naikAngkot(arrPenumpang) {
 
 //tugas3
 function nilaiTertinggi(siswa) {
-  // Code disini
+  var arrClass = [];
+  var arrHighest = [];
+  siswa.forEach((e) => {
+    if (arrClass.includes(e["class"]) == false) {
+      arrClass.push(e["class"]);
+    }
+  });
+
+  arrClass.forEach((e) => {
+    siswa.forEach((a) => {
+      var arrTemp = {};
+      var counter = 0;
+      if (e == a["class"]) {
+        if (counter == 0) {
+          arrTemp.name = a["name"];
+          arrTemp.class = a["class"];
+          arrTemp.score = a["score"];
+        } else if (arrTemp["score"] > a["score"]) {
+          arrTemp.name = a["name"];
+          arrTemp.class = a["class"];
+          arrTemp.score = a["score"];
+        }
+      }
+      console.log(arrTemp);
+      counter++;
+    });
+  });
 }
 
 // TEST CASE
-// console.log(
-//   nilaiTertinggi([
-//     {
-//       name: "Asep",
-//       score: 90,
-//       class: "adonis",
-//     },
-//     {
-//       name: "Ahmad",
-//       score: 85,
-//       class: "vuejs",
-//     },
-//     {
-//       name: "Regi",
-//       score: 74,
-//       class: "adonis",
-//     },
-//     {
-//       name: "Afrida",
-//       score: 78,
-//       class: "reactjs",
-//     },
-//   ])
-// );
+nilaiTertinggi([
+  {
+    name: "Asep",
+    score: 90,
+    class: "adonis",
+  },
+  {
+    name: "Ahmad",
+    score: 85,
+    class: "vuejs",
+  },
+  {
+    name: "Regi",
+    score: 74,
+    class: "adonis",
+  },
+  {
+    name: "Afrida",
+    score: 78,
+    class: "reactjs",
+  },
+  {
+    name: "Afrida",
+    score: 78,
+    class: "reactjs",
+  },
+]);
 
 // OUTPUT:
 
