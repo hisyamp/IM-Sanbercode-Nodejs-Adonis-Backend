@@ -78,13 +78,13 @@ var wordlength3 = thirdWord3.length;
 var wordlength4 = fourthWord3.length;
 var wordlength5 = fifthWord3.length;
 
-console.log(
-  "First Word: " + exampleFirstWord3 + ", with length: " + wordlength1
-);
-console.log("Second Word: " + secondWord3 + ", with length: " + wordlength2);
-console.log("Third Word: " + thirdWord3 + ", with length: " + wordlength3);
-console.log("Fourth Word: " + fourthWord3 + ", with length: " + wordlength4);
-console.log("Fifth Word: " + fifthWord3 + ", with length: " + wordlength5);
+// console.log(
+//   "First Word: " + exampleFirstWord3 + ", with length: " + wordlength1
+// );
+// console.log("Second Word: " + secondWord3 + ", with length: " + wordlength2);
+// console.log("Third Word: " + thirdWord3 + ", with length: " + wordlength3);
+// console.log("Fourth Word: " + fourthWord3 + ", with length: " + wordlength4);
+// console.log("Fifth Word: " + fifthWord3 + ", with length: " + wordlength5);
 
 //tugas conditional
 function wereWolf(nama, peran) {
@@ -183,4 +183,4 @@ function formatTgl(tgl, bln, thn) {
   }
 }
 
-formatTgl(11, 2, 19918);
+// formatTgl(11, 2, 19918);

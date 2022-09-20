@@ -74,4 +74,4 @@ function makeLadder(a) {
   }
   console.log(c);
 }
-makeLadder(6);
+// makeLadder(6);

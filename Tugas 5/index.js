@@ -98,24 +98,18 @@ function nilaiTertinggi(siswa) {
     }
   });
 
+  var arrTemp = {};
   arrClass.forEach((e) => {
+    var counter = 0;
+    console.log(e);
     siswa.forEach((a) => {
-      var arrTemp = {};
-      var counter = 0;
+      console.log(e + " ---- " + a["class"]);
       if (e == a["class"]) {
-        if (counter == 0) {
-          arrTemp.name = a["name"];
-          arrTemp.class = a["class"];
-          arrTemp.score = a["score"];
-        } else if (arrTemp["score"] > a["score"]) {
-          arrTemp.name = a["name"];
-          arrTemp.class = a["class"];
-          arrTemp.score = a["score"];
-        }
       }
-      console.log(arrTemp);
-      counter++;
+      counter += 1;
+      console.log(counter);
     });
+    console.log(arrTemp);
   });
 }
 
