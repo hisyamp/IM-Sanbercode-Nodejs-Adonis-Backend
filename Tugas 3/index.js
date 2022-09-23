@@ -75,3 +75,26 @@ function makeLadder(a) {
   console.log(c);
 }
 // makeLadder(6);
+
+function meja(n) {
+  var string = "";
+  for (let i = 0; i < n; i++) {
+    for (let k = 0; k < n - i; k++) {
+      string += "*";
+    }
+    for (let k = 0; k <= 2 * i - 2; k++) {
+      string += "-";
+    }
+    for (let k = n; k >= i + 1; k--) {
+      if (k == n + 1) {
+        i - 1;
+      }
+      string += "*";
+    }
+    string += "\n";
+  }
+
+  return string;
+}
+
+console.log(meja(4));
