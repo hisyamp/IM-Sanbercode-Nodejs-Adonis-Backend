@@ -14,14 +14,7 @@ class Bootcamp {
 
       let existingData = JSON.parse(data);
       let employee = new Employee(name, password, role);
-      existingData.push(employee);
-      fs.writeFile(path, JSON.stringify(existingData), (err) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log("Berhasil Register!");
-        }
-      });
+      console.log(employee);
     });
   }
   static login(input) {

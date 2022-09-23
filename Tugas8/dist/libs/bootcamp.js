@@ -56,15 +56,7 @@ var Bootcamp = /*#__PURE__*/function () {
 
         var existingData = JSON.parse(data);
         var employee = new _employee["default"](name, password, role);
-        existingData.push(employee);
-
-        _fs["default"].writeFile(path, JSON.stringify(existingData), function (err) {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log("Berhasil Register!");
-          }
-        });
+        console.log(employee);
       });
     }
   }, {
