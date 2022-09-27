@@ -20,32 +20,38 @@ class Bootcamp {
   static login(input) {
     let [name, password] = input.split(",");
 
-    fsPromises
-      .readFile(path)
-      .then((data) => {
-        let employees = JSON.parse(data);
-
-        let indexEmp = employees.findIndex((emp) => emp._name == name);
-        if (indexEmp == -1) {
-          console.log("Data tidak ditemukan");
-        } else {
-          let employee = employees[indexEmp];
-          if (employee._password == password) {
-            employee._isLogin = true;
-
-            employees.slice(indexEmp, 1, employee);
-            return fsPromises.writeFile(path, JSON.stringify(employee));
-          } else {
-            console.log("password salah");
-          }
+    fsPromises.readFile(
+      (path,
+      (err, data) => {
+        if (err) {
+          res.status(400).json({ error: "error dalam pembacaan data" });
         }
       })
-      .then(() => {
-        console.log("berhasil login");
-      })
-      .catch((err) => {
-        console.log("error");
-      });
+        .then((data) => {
+          let employees = JSON.parse(data);
+
+          let indexEmp = employees.findIndex((emp) => emp._name == name);
+          if (indexEmp == -1) {
+            console.log("Data tidak ditemukan");
+          } else {
+            let employee = employees[indexEmp];
+            if (employee._password == password) {
+              employee._isLogin = true;
+
+              employees.slice(indexEmp, 1, employee);
+              return fsPromises.appendFile(path, JSON.stringify(employee));
+            } else {
+              console.log("password salah");
+            }
+          }
+        })
+        .then(() => {
+          console.log("berhasil login");
+        })
+        .catch((err) => {
+          console.log("error");
+        })
+    );
   }
 }
 
