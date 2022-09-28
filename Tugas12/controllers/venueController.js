@@ -61,7 +61,11 @@ class VenueController {
           address: address,
           phone: phone,
         },
-        { where: req.params.id }
+        {
+          where: {
+            id: req.params.id,
+          },
+        }
       );
 
       res.status(200).json({
