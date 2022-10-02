@@ -25,4 +25,5 @@ Route.get('/', async () => {
 })
 
 Route.resource('genre','GenresController')
+Route.resource('movie','MoviesController')
 

@@ -44,7 +44,8 @@ export default class GenresController {
 
   public async edit({}: HttpContextContract) {}
 
-  public async update({params,request,response}: HttpContextContract) {try {
+  public async update({params,request,response}: HttpContextContract) {
+    try {
     const data = await Database.from('genres').where('id',params.id).update({
       name: request.input('name')
     })
