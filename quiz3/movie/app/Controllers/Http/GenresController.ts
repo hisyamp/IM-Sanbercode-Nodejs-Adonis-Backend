@@ -33,6 +33,8 @@ export default class GenresController {
   public async show({params,response}: HttpContextContract) {
     try {
       const data = await Database.from('genres').where('id',params.id)
+      const movies = await Database.from('movies').select('movies.id','title','resume','release_date').where('genre_id',params.id)
+      data[0]["movies"] = movies
       response.ok({
         status: "success",
         data: data,
